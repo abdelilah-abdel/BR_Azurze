@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/502fc8bc-10fd-402d-a113-af3c909fbf0c/resourceGroups/appsvc_linux_centralus/providers/Microsoft.Web/sites/BrandReputation",
+    "appService.deploySubpath": "."
+}
