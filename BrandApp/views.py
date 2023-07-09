@@ -13,6 +13,10 @@ def login(request):
 def home(request):
     return render(request, 'home.html')
 
+
+def charts(request):
+    return render(request, 'charts.html')
+
 def facebook_callback(request):
     # Handle the Facebook callback logic here
     return HttpResponse("Facebook callback view")

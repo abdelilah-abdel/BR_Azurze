@@ -19,6 +19,7 @@ urlpatterns = [
     path('accounts/facebook/login/callback/', views.facebook_callback, name='facebook_callback'),
 
     path('api/data/', views.get_data, name='api-data'),
+    path('charts/', views.charts, name='charts'),
 
 ]
 
