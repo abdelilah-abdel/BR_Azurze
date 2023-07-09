@@ -60,4 +60,4 @@ jobs:
         with:
           app-name: 'BrandReputation'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_34D8E32A8A184C2484AC8F0563EC234F }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_98B9FE413EC643FEB22189E6007BE758 }}
