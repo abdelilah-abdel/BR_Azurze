@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
-# from transformers import pipeline
+from transformers import pipeline
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
 
@@ -56,7 +56,7 @@ def home(request):
         if selected_value== "Vader":
             sentiment_result = sentiment_Vader(q)  # Pass the 'q' value to the sentiment analysis function
         elif  selected_value == "roBERTa":
-            # sentiment_classifier = pipeline("sentiment-analysis", model="roberta-base")
-            # sentiment_result = sentiment_classifier(q)[0]['label']
-            pass
+            sentiment_classifier = pipeline("sentiment-analysis", model="roberta-base")
+            sentiment_result = sentiment_classifier(q)[0]['label']
+            
     return render(request, 'home.html', {'sentiment_result': sentiment_result,  "Radio":selected_value,"Q":q ,"Request":Request})
