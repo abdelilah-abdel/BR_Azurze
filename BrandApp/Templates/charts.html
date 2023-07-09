@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+{% block jquery %}
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"> 
+
+var endpoint = '/api/data';
+
+$.ajax({
+    method:'GET',
+    url:endpoint,
+    success : function(data){
+        console.log(data)
+        console.log("hahhahahahahha")
+    },
+    error: function(error_data){
+        console.log("error")
+        console.log(error_data)
+        console.log("hihihihihihi")
+
+    }
+})
+
+</script>
+
+{% endblock %}
+
+<div class="row">
+        <div class="col-sm-12">
+                <h1> hello </h1>
+        </div>
+</div>
+
+
+{% endblock content %}

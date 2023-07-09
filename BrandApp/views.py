@@ -2,7 +2,9 @@ from django.shortcuts import render
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 from transformers import pipeline
 from django.contrib.auth.decorators import login_required
-from django.http import HttpResponse
+from django.http import HttpResponse , JsonResponse
+import json
+
 
 def login(request):
     return render(request, 'login.html')
@@ -47,6 +49,7 @@ def landing(request):
 def home(request):
     sentiment_result = None
     selected_value = None
+    buttonName= None
     q = None
     Request=None
     if request.method =='POST':
@@ -60,3 +63,10 @@ def home(request):
             sentiment_result = sentiment_classifier(q)[0]['label']
             
     return render(request, 'home.html', {'sentiment_result': sentiment_result,  "Radio":selected_value,"Q":q ,"Request":Request})
+
+def get_data(request, *args, **kwargs):
+    with open("twitter.json") as file:
+        data = json.load(file)
+    
+    return JsonResponse(data, safe=False)
+

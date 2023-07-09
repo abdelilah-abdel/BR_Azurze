@@ -5,6 +5,8 @@ from django.contrib import admin
 from django.urls import path, include
 from django.contrib.auth import views as auth_views
 from BrandApp import views
+ 
+
 
 urlpatterns = [
     path('' , views.landing , name ="landing"),
@@ -16,7 +18,7 @@ urlpatterns = [
     #path('oauth/', include('social_django.urls',namespace='social')),
     path('accounts/facebook/login/callback/', views.facebook_callback, name='facebook_callback'),
 
- 
+    path('api/data/', views.get_data, name='api-data'),
 
 ]
 
